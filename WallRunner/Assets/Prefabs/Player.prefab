@@ -189,7 +189,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSoeed: 12
-  inputDelay: 0.15
+  inputDelay: 0.1
+  cameraRotation: {fileID: 0}
 --- !u!114 &1341601214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,4 +207,5 @@ MonoBehaviour:
   fierRate: 0.2
   inputDelay: 0.15
   fierPoint: {fileID: 1819142210}
+  useE: 0
   bulletSpeed: 12

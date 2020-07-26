@@ -9,15 +9,19 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private float inputDelay;
     [SerializeField] private Transform fierPoint;
 
+    [SerializeField] private bool useE;
+
     [SerializeField] private float bulletSpeed;
 
     private float fierTimer;
     private float inputTimer;
     private PlayerJump playerJump;
+    private KeyCode targetKey;
 
     private void Start()
     {
         playerJump = GetComponent<PlayerJump>();
+        targetKey = useE ? KeyCode.E : KeyCode.Space;
     }
 
     private void Update()
@@ -28,7 +32,7 @@ public class PlayerShooting : MonoBehaviour
         if (inputTimer > 0)
             inputTimer -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(targetKey) && playerJump.IsJumping)
             inputTimer = inputDelay;
 
         if(inputTimer > 0 && playerJump.IsJumping  && fierTimer <= 0)
