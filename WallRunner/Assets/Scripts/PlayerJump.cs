@@ -13,6 +13,7 @@ public class PlayerJump : MonoBehaviour
     private bool isJumpping;
     private float inputDelayTimer;
 
+    public bool IsJumping => isJumpping;
 
     private enum RunState
     {

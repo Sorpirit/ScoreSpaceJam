@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Obsticle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float speed;
+    [SerializeField] private Rigidbody objRb;
+
+    private void Start()
     {
-        
+        objRb.velocity = Vector3.down * speed;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
