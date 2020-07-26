@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 9032860656018140337, guid: 3e5a390e7324e0544af35c453c6dd2d9, type: 3}
-  fierRate: 0.3
+  fierRate: 0.2
   inputDelay: 0.15
   fierPoint: {fileID: 1819142210}
   bulletSpeed: 12

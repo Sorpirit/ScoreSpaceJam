@@ -8,6 +8,8 @@ public class PlayerJump : MonoBehaviour
 
     [SerializeField] private float inputDelay;
 
+    [SerializeField] private CameraRotation cameraRotation;
+
     private Rigidbody playerRb;
     private RunState runState;
     private bool isJumpping;
@@ -61,5 +63,6 @@ public class PlayerJump : MonoBehaviour
         //playerRb.isKinematic = false;
         playerRb.velocity = new Vector2(jumpSoeed * dir, 0);
         isJumpping = true;
+        cameraRotation.SwitchCameras();
     }
 }
