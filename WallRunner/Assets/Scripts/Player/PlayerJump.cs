@@ -10,6 +10,8 @@ public class PlayerJump : MonoBehaviour
 
     [SerializeField] private float PlayerRotationVelocityDuringAJump;
 
+    //[SerializeField] private CameraRotation cameraRotation;
+
     [SerializeField] private GameObject PlayerMesh;
 
     private Rigidbody playerRb;
@@ -66,5 +68,6 @@ public class PlayerJump : MonoBehaviour
         //playerRb.isKinematic = false;
         playerRb.velocity = new Vector2(jumpSoeed * dir, 0);
         isJumpping = true;
+        //cameraRotation.SwitchCameras();
     }
 }
