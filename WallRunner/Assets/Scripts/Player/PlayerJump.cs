@@ -8,7 +8,9 @@ public class PlayerJump : MonoBehaviour
 
     [SerializeField] private float inputDelay;
 
-    [SerializeField] private float PlayerRotationVelocityDuringAJump;
+    [SerializeField] private float PlayerRotationVelocityDuringAJump = 2;
+
+    [SerializeField] private CameraRotation cameraRotation;
 
     [SerializeField] private GameObject PlayerMesh;
 
@@ -60,11 +62,12 @@ public class PlayerJump : MonoBehaviour
 
     private void Jump()
     {
-        LeanTween.rotate(PlayerMesh, new Vector3(-90, PlayerMesh.transform.rotation.eulerAngles.y + 180, 0), 1/PlayerRotationVelocityDuringAJump);
+        LeanTween.rotate(PlayerMesh, new Vector3(-90, PlayerMesh.transform.rotation.eulerAngles.y + 180, 0), .5f);
         runState = runState == RunState.RunLeftWall ? RunState.RunRightWall : RunState.RunLeftWall;
         int dir = runState == RunState.RunLeftWall ? 1 : -1;
         //playerRb.isKinematic = false;
         playerRb.velocity = new Vector2(jumpSoeed * dir, 0);
         isJumpping = true;
+        cameraRotation.SwitchCameras();
     }
 }
