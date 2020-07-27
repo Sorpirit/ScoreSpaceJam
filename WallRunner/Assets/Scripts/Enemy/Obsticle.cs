@@ -20,6 +20,14 @@ public class Obsticle : MonoBehaviour
             Destroy(collision.gameObject);
             Die();
         }
+        else if (collision.gameObject.CompareTag("Bullet"))
+        {
+            PlayerHealth health = collision.gameObject.GetComponent<PlayerHealth>();
+            health.Damage();
+            Die();
+        }
+
+       
     }
 
     private void Die()
